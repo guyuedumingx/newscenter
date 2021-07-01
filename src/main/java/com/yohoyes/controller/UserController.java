@@ -2,12 +2,10 @@ package com.yohoyes.controller;
 
 import com.yohoyes.mapper.UserMapper;
 import com.yohoyes.pojo.User;
+import com.yohoyes.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.jws.soap.SOAPBinding;
 import java.util.List;
 
 /**
@@ -15,23 +13,24 @@ import java.util.List;
  * @date 2021/7/1 11:30
  */
 @RestController
+@RequestMapping("/user")
 public class UserController {
     @Autowired
-    UserMapper userMapper = null;
+    UserService userService = null;
 
-    @RequestMapping("/user/list")
+    @RequestMapping("/list")
     public String getAllUser() {
-        List<User> users = userMapper.queryUserList();
+        List<User> users = userService.queryUserList();
         return users.toString();
     }
 
-    @RequestMapping("/user/add")
+    @RequestMapping("/add")
     public String addUser() {
         User user = new User();
         user.setEmail("111@qq.com");
         user.setName("ww2");
         user.setPassword("111");
-        userMapper.addUser(user);
+        userService.addUser(user);
         return user.toString();
     }
 

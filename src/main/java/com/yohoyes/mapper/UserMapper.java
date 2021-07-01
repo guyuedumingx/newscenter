@@ -30,5 +30,5 @@ public interface UserMapper {
     int deleteUser(int id);
 
     @Select("select * from t_user where email=#{email} and password=#{password}")
-    User login(@Param("email") String email,@Param("password") String pwd);
+    User login(@Param("email") String email,@Param("password") String password);
 }
