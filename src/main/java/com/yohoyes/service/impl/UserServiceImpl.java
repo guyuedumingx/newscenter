@@ -4,6 +4,7 @@ import com.yohoyes.mapper.UserMapper;
 import com.yohoyes.pojo.User;
 import com.yohoyes.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -11,6 +12,7 @@ import java.util.List;
  * @author yohoyes
  * @date 2021/7/1 12:01
  */
+@Service("userService")
 public class UserServiceImpl implements UserService {
 
     @Autowired
