@@ -1,6 +1,5 @@
 package com.yohoyes.controller;
 
-import com.yohoyes.mapper.UserMapper;
 import com.yohoyes.pojo.User;
 import com.yohoyes.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
