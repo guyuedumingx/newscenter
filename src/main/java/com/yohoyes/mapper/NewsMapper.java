@@ -23,10 +23,10 @@ public interface NewsMapper {
     @Select("select * from t_news where area_id=#{areaId} order by time desc")
     List<News> queryNewsByArea(int areaId);
 
-    @Insert("insert into t_news (title,content,link,user_id,area_id) values (#{title},#{content},#{link},#{userId},#{areaId})")
+    @Insert("insert into t_news (title,author,description,content,link,user_id,area_id,pubDate) values (#{title},#{author},#{description},#{content},#{link},#{userId},#{areaId},#{pubDate})")
     int addNews(News news);
 
-    @Update("update t_news set title=#{title},content=#{content},link=#{link}")
+    @Update("update t_news set title=#{title},content=#{content},link=#{link},description=#{description},author=#{author}")
     int updateNews(News news);
 
     @Delete("delete t_news where id=#{id}")

@@ -5,7 +5,6 @@ import com.yohoyes.pojo.User;
 import com.yohoyes.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 /**
@@ -16,7 +15,7 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    UserMapper userMapper = null;
+    UserMapper userMapper;
 
     @Override
     public List<User> queryUserList() {

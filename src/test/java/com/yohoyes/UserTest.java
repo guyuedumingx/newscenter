@@ -41,5 +41,9 @@ public class UserTest {
 
         userService.deleteUser(user.getId());
         userService.queryUserList().forEach(System.out::println);
+
+        User login = userService.login("11@qq.com", "111");
+        System.out.println();
+        System.out.println(login);
     }
 }

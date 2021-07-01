@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import javax.sql.DataSource;
 
 @SpringBootTest
-class NewscenterApplicationTests {
+class NewsCenterApplicationTests {
 
     @Autowired
     DataSource dataSource;

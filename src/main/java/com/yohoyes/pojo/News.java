@@ -15,9 +15,11 @@ import java.util.Date;
 public class News {
     private int id;
     private String title;
+    private String author;
+    private String description;
     private String content;
     private String link;
-    private Date time;
+    private Date pubDate;
     private int userId;
     private int areaId;
 }

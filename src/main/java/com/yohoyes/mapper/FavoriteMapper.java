@@ -21,7 +21,7 @@ public interface FavoriteMapper {
     List<Favorite> queryFavoriteListByUser(int userId);
 
     @Select("select * from t_favorite where id = #{id}")
-    List<Favorite> queryFavoriteById(int id);
+    Favorite queryFavoriteById(int id);
 
     @Insert("insert into t_favorite (name, user_id) values (#{name},#{userId}")
     int addFavorite(Favorite favorite);
