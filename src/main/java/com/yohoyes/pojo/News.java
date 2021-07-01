@@ -20,6 +20,5 @@ public class News {
     private String link;
     private Date time;
     private int userId;
-    private int favoriteId;
     private int areaId;
 }
