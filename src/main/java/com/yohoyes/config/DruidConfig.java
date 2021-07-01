@@ -2,7 +2,9 @@ package com.yohoyes.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.support.http.StatViewServlet;
+import com.alibaba.druid.support.http.WebStatFilter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -37,6 +39,18 @@ public class DruidConfig {
         initMap.put("allow", "");
 
         bean.setInitParameters(initMap);
+        return bean;
+    }
+
+    @Bean
+    public FilterRegistrationBean webStatFilter() {
+        FilterRegistrationBean bean = new FilterRegistrationBean();
+        bean.setFilter(new WebStatFilter());
+
+        Map<String, String> initParams = new HashMap<>();
+        initParams.put("exclusions","*.js,*.css,/druid/**");
+
+        bean.setInitParameters(initParams);
         return bean;
     }
 }
