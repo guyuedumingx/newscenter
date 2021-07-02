@@ -16,7 +16,7 @@ public class RssTest {
 
     @Test
     public void test1() {
-        List<RssItem> allRssItemList = FeedConsumer.getAllRssItemList("http://rss.news.sohu.com/rss/guonei.xml");
+        List<RssItem> allRssItemList = FeedConsumer.getAllRssItemList("https://news.baidu.com/?cmd=7&loc=0&name=%B1%B1%BE%A9&tn=rss");
         allRssItemList.forEach(System.out::println);
     }
 }
