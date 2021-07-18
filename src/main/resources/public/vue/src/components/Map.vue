@@ -24,7 +24,8 @@ export default {
 			// placeholder: "用户名/电话",
 			// find: "2", //1显示新增按钮，2显示导入按钮，若不显示这两个按钮可以写0或者不写值
 			chart: null,
-			map: "world",
+			// map: "world",
+			areaClick: "世界",
 		};
 	},
 	mounted() {
@@ -51,17 +52,21 @@ export default {
 			console.log(val);
 		},
 
-		onWhichCountry(params) {
-			console.dir(this.chart);
+		onWhichCountry() {
+			console.dir(this.areaClick);
+			if (this.areaClick === "中国") {
+				initChina(this);
+			}
 		},
 
 		//加载地图
 		initChart() {
-			initChina(this);
 			// initWorld(this);
-			// if (this.map === "world") {
-			// 	initWorld(this);
-			// }
+			if (this.areaClick === "世界") {
+				initWorld(this);
+			} else if (this.areaClick === "中国") {
+				initChina(this);
+			}
 		},
 	},
 };
