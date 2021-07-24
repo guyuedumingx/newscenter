@@ -1,8 +1,6 @@
 <template>
-	<div class="map-part">
-		<div class="world-map" ref="world" @click="onWhichCountry">
-			<!-- <world></world> -->
-		</div>
+	<div class="world-map" ref="world" @click="onWhichCountry">
+		<!-- <world></world> -->
 	</div>
 </template>
 
@@ -29,7 +27,10 @@ export default {
 		};
 	},
 	mounted() {
-		this.initChart();
+		// this.initChart();
+		this.$nextTick(() => {
+			this.initChart();
+		});
 	},
 	beforeDestroy() {
 		if (!this.chart) {
@@ -72,19 +73,12 @@ export default {
 };
 </script>
 
-<style>
-@import url("../assets/css/base.css");
-
+<style scoped>
 .world-map {
-	width: 1000px;
-	height: 600px;
+	width: 100%;
+	height: 100%;
+	border-radius: 0.5rem;
 	box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.08);
-	margin-top: 50px;
-	margin-left: 50px;
 	background-color: #2486b970;
-	/* transform: translateX(-50%); */
-	/* border: 0.125rem solid saddlebrown; */
-	/* background-color: aqua; */
-	/* background-color: rgb(148, 185, 255); */
 }
 </style>

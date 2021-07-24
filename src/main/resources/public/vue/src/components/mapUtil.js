@@ -4,11 +4,12 @@ import echarts from "echarts";
 import "echarts/map/js/world.js";
 import "echarts/map/js/china.js"
 import nameMap from "../common/echarts/country-namemap"
+import "../common/jquery.min"
 
 export function initWorld(ele) {
   ele.chart = echarts.init(ele.$refs.world);
-  // console.log(chart);
   window.onresize = echarts.init(ele.$refs.world).resize;
+
   // 把配置和数据放这里
   const option = {
     // backgroundColor: "#2486b970",//"#d8e3e7",
@@ -36,7 +37,7 @@ export function initWorld(ele) {
       map: "world",
       roam: true,
       // roam: 'scale',
-      zoom: 1.25,
+      zoom: 1.15,
       // center:[],
       // silent: true, //好像是静止这个图层的
       label: {

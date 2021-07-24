@@ -14,9 +14,13 @@ export default {
 </script>
 
 <style>
+@import url("assets/css/base.css");
+</style>
+
+<style scoped>
 #app {
 	width: 100%;
-	height: 1000px;
-	background-color: #fffef8;
+	height: 100vh;
 }
 </style>
+
